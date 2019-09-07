@@ -72,3 +72,5 @@ clear
 ee_lib_echo "Cek Spesifikasi PHP:"
 php -v
 httpd -v
+curl -o  /var/www/html/bench.php https://raw.githubusercontent.com/widaryanto/webserver/master/bench.php
+php bench.php
