@@ -30,14 +30,14 @@ function ee_lib_echo_fail()
    echo $(tput setaf 1)$@$(tput sgr0)
 }
 
+# =======================================================================================
+
 # Execute: update
-ee_lib_echo_text "Bismillahirrahmanirrahim..."
 ee_lib_echo_text "Updating, please wait..."
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf update
 dnf -y install wget tar
-#clear
 
 # Execute: installing
 ee_lib_echo_text "Installing Web Server, please wait..."
@@ -69,4 +69,4 @@ systemctl restart nginx php-fpm
 
 ee_lib_echo "Installing Finished"
 php -v
-httpd -v
+nginx -v
