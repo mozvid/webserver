@@ -12,8 +12,6 @@ php -v
 
 # ======================= install nginx =======================
 dnf -y install nginx
-rm -f /etc/nginx/nginx.conf
-curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
 
 systemctl enable nginx
 systemctl start nginx
@@ -29,6 +27,8 @@ firewall-cmd --permanent --zone=public --add-service=https
 systemctl reload firewalld
 
 # ======================= finishing install =======================
+rm -f /etc/nginx/nginx.conf
+curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
 chown nginx:nginx /var/www/html -R
 dnf clean all
 systemctl restart nginx php-fpm
