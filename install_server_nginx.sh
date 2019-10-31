@@ -37,7 +37,7 @@ dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarc
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf update
 dnf -y install wget tar
-clear
+#clear
 
 # Execute: installing
 ee_lib_echo_text "Installing Web Server, please wait..."
@@ -65,7 +65,7 @@ systemctl start php-fpm
 dnf clean all
 chown nginx:nginx /var/www/html -R
 systemctl restart nginx php-fpm
-clear
+#clear
 
 ee_lib_echo "Installing Finished"
 php -v
