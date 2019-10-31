@@ -21,7 +21,7 @@ function ee_lib_echo_info()
 # Green color
 function ee_lib_echo_text()
 {
-   echo $(tput setaf 7)$@$(tput sgr0)
+   echo $(tput setaf 2)$@$(tput sgr0)
 }
 
 # Red color
