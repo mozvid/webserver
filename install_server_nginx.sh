@@ -17,6 +17,13 @@ function ee_lib_echo_info()
 {
    echo $(tput setaf 7)$@$(tput sgr0)
 }
+
+# Green color
+function ee_lib_echo_text()
+{
+   echo $(tput setaf 7)$@$(tput sgr0)
+}
+
 # Red color
 function ee_lib_echo_fail()
 {
@@ -24,9 +31,9 @@ function ee_lib_echo_fail()
 }
 
 # Execute: update
-ee_lib_echo "Bismillahirrahmanirrahim..."
+ee_lib_echo_text "Bismillahirrahmanirrahim..."
 clear
-ee_lib_echo "Updating, please wait..."
+ee_lib_echo_text "Updating, please wait..."
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf update
@@ -34,7 +41,7 @@ dnf install wget tar
 clear
 
 # Execute: installing
-ee_lib_echo "Installing Web Server, please wait..."
+ee_lib_echo_text "Installing Web Server, please wait..."
 dnf install nginx
 systemctl enable nginx
 systemctl start nginx
@@ -50,7 +57,7 @@ firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 systemctl reload firewalld
 
-ee_lib_echo "Installing php 7.4, please wait..."
+ee_lib_echo_text "Installing php 7.4, please wait..."
 dnf module install php:remi-7.4
 dnf install php-fpm php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
 systemctl enable php-fpm
