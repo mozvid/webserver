@@ -21,7 +21,7 @@ function ee_lib_echo_info()
 # Green color
 function ee_lib_echo_text()
 {
-   echo $(tput setaf 2)$@$(tput sgr0)
+   echo $(tput setaf 127)$@$(tput sgr0)
 }
 
 # Red color
@@ -32,7 +32,6 @@ function ee_lib_echo_fail()
 
 # Execute: update
 ee_lib_echo_text "Bismillahirrahmanirrahim..."
-clear
 ee_lib_echo_text "Updating, please wait..."
 dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
