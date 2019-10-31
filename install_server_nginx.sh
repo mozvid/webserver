@@ -33,15 +33,15 @@ function ee_lib_echo_fail()
 # Execute: update
 ee_lib_echo_text "Bismillahirrahmanirrahim..."
 ee_lib_echo_text "Updating, please wait..."
-dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf update
-dnf install wget tar
+dnf -y install wget tar
 clear
 
 # Execute: installing
 ee_lib_echo_text "Installing Web Server, please wait..."
-dnf install nginx
+dnf -y install nginx
 systemctl enable nginx
 systemctl start nginx
 
@@ -49,7 +49,7 @@ rm -f /etc/nginx/nginx.conf
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
 
 ee_lib_echo "Installing Firewall, please wait..."
-dnf install firewalld
+dnf -y install firewalld
 systemctl enable firewalld
 systemctl start firewalld
 firewall-cmd --permanent --zone=public --add-service=http
@@ -57,12 +57,12 @@ firewall-cmd --permanent --zone=public --add-service=https
 systemctl reload firewalld
 
 ee_lib_echo_text "Installing php 7.4, please wait..."
-dnf module install php:remi-7.4
-dnf install php-fpm php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
+dnf -y module install php:remi-7.4
+dnf -y install php-fpm php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json
 systemctl enable php-fpm
 systemctl start php-fpm
 
-yum clean all
+dnf clean all
 chown nginx:nginx /var/www/html -R
 systemctl restart nginx php-fpm
 clear
