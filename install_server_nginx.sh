@@ -32,5 +32,6 @@ curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webse
 chown nginx:nginx /var/www/html -R
 dnf clean all
 systemctl restart nginx php-fpm
+clear
 php -v
 nginx -v
