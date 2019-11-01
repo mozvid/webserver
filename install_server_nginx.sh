@@ -32,6 +32,10 @@ curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webse
 chown nginx:nginx /var/www/html -R
 dnf clean all
 systemctl restart nginx php-fpm
+
 clear
+printf "$(tput setaf 2)\amy${ijo}========================= install finished ========================= \n$(tput sgr0)"
 php -v
+printf "$(tput setaf 2)==================================================================== \n$(tput sgr0)"
 nginx -v
+printf "$(tput setaf 2)==================================================================== \n$(tput sgr0)"
