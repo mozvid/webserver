@@ -1,6 +1,5 @@
 #!/bin/bash
 # ======================= install php 7.4 =======================
-printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf -y update
@@ -12,7 +11,6 @@ systemctl start php-fpm
 php -v
 
 # ======================= install nginx =======================
-printf "$(tput setaf 2)========================= install nginx ========================= \n$(tput sgr0)"
 dnf -y install nginx
 
 systemctl enable nginx
@@ -20,7 +18,6 @@ systemctl start nginx
 nginx -v
 
 # ======================= setting firewall =======================
-printf "$(tput setaf 2)========================= setting firewall ========================= \n$(tput sgr0)"
 dnf -y install firewalld
 systemctl enable firewalld
 systemctl start firewalld
