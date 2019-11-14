@@ -34,7 +34,7 @@ dnf clean all
 systemctl restart nginx php-fpm
 
 clear
-printf "$(tput setaf 2)\amy========================= install finished ========================= \n$(tput sgr0)"
+printf "$(tput setaf 2)========================= install finished ========================= \n$(tput sgr0)"
 php -v
 printf "$(tput setaf 2)==================================================================== \n$(tput sgr0)"
 nginx -v
