@@ -31,6 +31,10 @@ rm -f /etc/nginx/nginx.conf
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
 chown -R nginx:nginx /var/www/html
 chmod -R 777 /var/www/html
+
+sudo setsebool -P httpd_can_network_connect 1
+sudo setsebool -P httpd_unified 1
+ 
 dnf clean all
 systemctl restart nginx php-fpm
 
