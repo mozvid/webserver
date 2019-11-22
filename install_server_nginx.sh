@@ -29,7 +29,8 @@ systemctl reload firewalld
 # ======================= finishing install =======================
 rm -f /etc/nginx/nginx.conf
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
-chown nginx:nginx /var/www/html -R
+chown -R nginx:nginx /var/www/html
+chmod -R 777 /var/www/html
 dnf clean all
 systemctl restart nginx php-fpm
 
