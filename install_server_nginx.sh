@@ -34,8 +34,10 @@ chown -R nginx:nginx /var/www/html
 chmod -R 777 /var/www/html
 
 sudo setsebool -P httpd_can_network_connect 1
+sleep 3s
 sudo setsebool -P httpd_unified 1
- 
+sleep 3s
+
 dnf clean all
 systemctl restart nginx php-fpm
 
