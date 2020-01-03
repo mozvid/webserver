@@ -30,6 +30,8 @@ systemctl reload firewalld
 rm -f /etc/nginx/nginx.conf
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/widaryanto/webserver/master/nginx.conf
 sleep 3s
+curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/widaryanto/webserver/master/www.conf
+sleep 3s
 chown -R nginx:nginx /var/www/html
 chmod -R 777 /var/www/html
 
