@@ -33,6 +33,7 @@ sleep 3s
 curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/widaryanto/webserver/master/www.conf
 sleep 3s
 chown -R nginx:nginx /var/www/html
+chown -R nginx:nginx /var/lib/php
 chmod -R 777 /var/www/html
 
 sudo setsebool -P httpd_can_network_connect 1
