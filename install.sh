@@ -48,7 +48,7 @@ yum -y install php php-common php-xml php-mbstring unzip curl wget htop git php-
 
 chkconfig httpd on
 rm -f /etc/httpd/conf/httpd.conf
-curl -o  /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/widaryanto/webserver/master/httpd.conf
+curl -o  /etc/httpd/conf/httpd.conf https://raw.githubusercontent.com/mozvid/webserver/master/httpd.conf
 
 # Php version
 echo -n "[In progress] Detect PHP version ..."
@@ -72,5 +72,5 @@ clear
 ee_lib_echo "Cek Spesifikasi PHP:"
 php -v
 httpd -v
-curl -o  /var/www/html/bench.php https://raw.githubusercontent.com/widaryanto/webserver/master/bench.php
+curl -o  /var/www/html/bench.php https://raw.githubusercontent.com/mozvid/webserver/master/bench.php
 php bench.php
