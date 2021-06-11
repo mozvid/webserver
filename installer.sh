@@ -41,24 +41,13 @@ sleep 3s
 
 printf "$(tput setaf 2)======================= setting firewall =======================\n$(tput sgr0)"
 dnf -y install firewalld
-systemctl enable firewalld
 systemctl start firewalld
+systemctl enable firewalld
 
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --permanent --zone=public --add-port=3306/tcp
 systemctl reload firewalld
-sleep 3s
-
-printf "$(tput setaf 2)======================= install iptables =======================\n$(tput sgr0)"
-dnf -y install iptables iptables-services
-
-systemctl start iptables
-systemctl enable iptables
-#systemctl status iptables
-iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
-service iptables save
-systemctl restart iptables
 sleep 3s
 
 printf "$(tput setaf 2)======================= finishing install =======================\n$(tput sgr0)"
