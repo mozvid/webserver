@@ -89,3 +89,4 @@ curl -o /var/www/html/info.php https://raw.githubusercontent.com/mozvid/webserve
 printf "$(tput setaf 2)========================= install finished ========================= \n$(tput sgr0)"
 
 #reboot
+systemctl restart nginx php-fpm mysqld memcached
