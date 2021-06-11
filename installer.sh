@@ -42,8 +42,8 @@ sleep 3s
 printf "$(tput setaf 2)======================= install iptables =======================\n$(tput sgr0)"
 dnf -y install iptables iptables-services
 
-systemctl enable iptables
 systemctl start iptables
+systemctl enable iptables
 #systemctl status iptables
 iptables -A INPUT -p tcp --dport 3306 -j ACCEPT
 service iptables save
