@@ -6,24 +6,24 @@ dnf -y update
 dnf -y module install php:remi-7.4
 dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached -y php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar wget htop screen nano
 
-systemctl enable php-fpm
 systemctl start php-fpm
+systemctl enable php-fpm
 php -v
 sleep 3s
 
 printf "$(tput setaf 2)======================= install nginx =======================\n$(tput sgr0)"
 dnf -y install nginx
 
-systemctl enable nginx
 systemctl start nginx
+systemctl enable nginx
 nginx -v
 sleep 3s
 
 printf "$(tput setaf 2)======================= install memcached =======================\n$(tput sgr0)"
 dnf -y install memcached libmemcached -y
 
-systemctl enable memcached
 systemctl start memcached
+systemctl enable memcached
 #systemctl status memcached
 sleep 3s
 
