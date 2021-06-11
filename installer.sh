@@ -79,5 +79,5 @@ rm -f /etc/nginx/default.d/php.conf
 curl -o /etc/nginx/default.d/php.conf https://raw.githubusercontent.com/mozvid/webserver/master/php.conf
 rm -f /etc/php-fpm.d/www.conf
 curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/mozvid/webserver/master/www.conf
-
+curl -o /var/www/html https://raw.githubusercontent.com/mozvid/webserver/master/info.php
 reboot
