@@ -4,7 +4,7 @@ dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarc
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf -y update
 dnf -y module install php:remi-7.4
-dnf -y install php-fpm php-cli php-mysqlnd php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar wget htop screen
+dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached -y php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar wget htop screen nano
 
 systemctl enable php-fpm
 systemctl start php-fpm
@@ -16,6 +16,13 @@ dnf -y install nginx
 systemctl enable nginx
 systemctl start nginx
 nginx -v
+
+# ======================= install memcached =======================
+dnf -y install memcached libmemcached -y
+
+systemctl enable memcached
+systemctl start memcached
+#systemctl status memcached
 
 # ======================= install mysql =======================
 dnf -y install mysql-server
@@ -56,5 +63,21 @@ systemctl start firewalld
 
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
-firewall-cmd --permanent --zone=mysqlrule --add-port=3306/tcp
+firewall-cmd --permanent --zone=public --add-port=3306/tcp
 systemctl reload firewalld
+
+# ======================= finishing install =======================
+chown -R nginx:nginx /var/www/html
+chown -R nginx:nginx /var/lib/php
+chmod -R 777 /var/www/html
+setsebool -P httpd_can_network_connect 1
+setsebool -P httpd_unified 1
+
+rm -f /etc/nginx/nginx.conf
+curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/mozvid/webserver/master/nginx.conf
+rm -f /etc/nginx/default.d/php.conf
+curl -o /etc/nginx/default.d/php.conf https://raw.githubusercontent.com/mozvid/webserver/master/php.conf
+rm -f /etc/php-fpm.d/www.conf
+curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/mozvid/webserver/master/www.conf
+
+reboot
