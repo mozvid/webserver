@@ -31,10 +31,7 @@ systemctl start mysqld.service
 systemctl enable mysqld
 
 mysql -u root <<-EOF
-UPDATE mysql.user SET Password=PASSWORD('cr0nichetzner') WHERE User='root';
-#DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'cr0nichetzner';
 FLUSH PRIVILEGES;
 EOF
 
