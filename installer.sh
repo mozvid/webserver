@@ -68,9 +68,9 @@ rm -f /etc/nginx/default.d/php.conf
 curl -o /etc/nginx/default.d/php.conf https://raw.githubusercontent.com/mozvid/webserver/master/php.conf
 sleep 3s
 
-printf "$(tput setaf 2)======================= Update fastcgi_params =======================\n$(tput sgr0)"
-rm -f /etc/nginx/fastcgi_params
-curl -o /etc/nginx/fastcgi_params https://raw.githubusercontent.com/mozvid/webserver/master/fastcgi_params
+printf "$(tput setaf 2)======================= Update fastcgi.conf =======================\n$(tput sgr0)"
+rm -f /etc/nginx/fastcgi.conf
+curl -o /etc/nginx/fastcgi.conf https://raw.githubusercontent.com/mozvid/webserver/master/fastcgi.conf
 sleep 3s
 
 printf "$(tput setaf 2)======================= Update www.conf =======================\n$(tput sgr0)"
