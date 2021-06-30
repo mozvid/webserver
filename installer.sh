@@ -47,6 +47,7 @@ systemctl enable firewalld
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 firewall-cmd --permanent --zone=public --add-port=3306/tcp
+firewall-cmd --permanent --zone=public --add-port=11211/tcp  
 systemctl reload firewalld
 sleep 3s
 
