@@ -78,7 +78,7 @@
 	echo str_pad("-", 38, "-") . "\n" . str_pad("Total time:", 25) . " : " . $total ." sec.</pre>";
 	
 $start = microtime(true);
-file_get_contents('https://www.aliexpress.com/item/32977819930.html');
+file_get_contents('https://www.aliexpress.com/item/1005001525756216.html');
 $finish = microtime(true);
 $time   = microtime();
 $time   = explode(' ', $time);
