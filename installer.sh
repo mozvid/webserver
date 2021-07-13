@@ -33,8 +33,6 @@ dnf -y install crontabs
 systemctl start crond.service
 systemctl enable crond.service
 #systemctl status crond
-curl -o /root/autorestart.sh https://raw.githubusercontent.com/mozvid/webserver/master/autorestart.sh
-chmod u+x /root/autorestart.sh
 sleep 3s
 
 printf "$(tput setaf 2)======================= install mysql =======================\n$(tput sgr0)"
@@ -77,6 +75,16 @@ sleep 3s
 printf "$(tput setaf 2)======================= Update php.conf =======================\n$(tput sgr0)"
 rm -f /etc/nginx/default.d/php.conf
 curl -o /etc/nginx/default.d/php.conf https://raw.githubusercontent.com/mozvid/webserver/master/php.conf
+sleep 3s
+
+printf "$(tput setaf 2)======================= Update mysql-server.cnf =======================\n$(tput sgr0)"
+rm -f /etc/my.cnf.d/mysql-server.cnf
+curl -o /etc/my.cnf.d/mysql-server.cnf https://raw.githubusercontent.com/mozvid/webserver/master/mysql-server.cnf
+sleep 3s
+
+printf "$(tput setaf 2)======================= Update crontabs =======================\n$(tput sgr0)"
+curl -o /root/autorestart.sh https://raw.githubusercontent.com/mozvid/webserver/master/autorestart.sh
+chmod u+x /root/autorestart.sh
 sleep 3s
 
 printf "$(tput setaf 2)======================= Update fastcgi.conf =======================\n$(tput sgr0)"
