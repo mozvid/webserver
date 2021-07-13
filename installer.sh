@@ -33,6 +33,9 @@ dnf -y install crontabs
 systemctl start crond.service
 systemctl enable crond.service
 #systemctl status crond
+curl -o /root/autorestart.sh https://raw.githubusercontent.com/mozvid/webserver/master/autorestart.sh
+chmod u+x /root/autorestart.sh
+sleep 3s
 
 printf "$(tput setaf 2)======================= install mysql =======================\n$(tput sgr0)"
 dnf -y install mysql-server
