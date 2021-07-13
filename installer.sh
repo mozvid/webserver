@@ -20,12 +20,19 @@ nginx -v
 sleep 3s
 
 printf "$(tput setaf 2)======================= install memcached =======================\n$(tput sgr0)"
-dnf -y install memcached libmemcached -y
+dnf -y install memcached libmemcached
 
 systemctl start memcached
 systemctl enable memcached
 #systemctl status memcached
 sleep 3s
+
+printf "$(tput setaf 2)======================= install crontabs =======================\n$(tput sgr0)"
+dnf -y install crontabs
+
+systemctl start crond.service
+systemctl enable crond.service
+#systemctl status crond
 
 printf "$(tput setaf 2)======================= install mysql =======================\n$(tput sgr0)"
 dnf -y install mysql-server
