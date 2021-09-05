@@ -42,7 +42,7 @@ systemctl start mysqld.service
 systemctl enable mysqld
 
 mysql -u root <<-EOF
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'cr0nichetzner';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'cr0niccontabo';
 FLUSH PRIVILEGES;
 EOF
 sleep 3s
