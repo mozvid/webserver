@@ -42,7 +42,12 @@ systemctl start mysqld.service
 systemctl enable mysqld
 
 mysql -u root <<-EOF
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'cr0niccontabo';
+CREATE USER 'remote'@'%' IDENTIFIED BY '#bismillah';
+GRANT ALL PRIVILEGES ON *.* TO 'remote'@'%';
+UPDATE mysql.user SET host='%' WHERE user='remote';
+ALTER USER 'remote'@'%' IDENTIFIED WITH mysql_native_password BY '#bismillah';
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY '#bismillah';
 FLUSH PRIVILEGES;
 EOF
 sleep 3s
