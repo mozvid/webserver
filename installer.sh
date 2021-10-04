@@ -50,6 +50,9 @@ ALTER USER 'remote'@'%' IDENTIFIED WITH mysql_native_password BY '#bismillah';
 ALTER USER 'root'@'localhost' IDENTIFIED BY '#bismillah';
 FLUSH PRIVILEGES;
 EOF
+systemctl set-environment MYSQLD_OPTS="--skip-log-bin=1"
+systemctl daemon-reload
+systemctl restart mysqld
 sleep 3s
 
 printf "$(tput setaf 2)======================= setting firewall =======================\n$(tput sgr0)"
