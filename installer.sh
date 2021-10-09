@@ -93,6 +93,7 @@ sleep 3s
 printf "$(tput setaf 2)======================= Update crontabs =======================\n$(tput sgr0)"
 curl -o /root/autorestart.sh https://raw.githubusercontent.com/mozvid/webserver/master/autorestart.sh
 chmod u+x /root/autorestart.sh
+echo "*/2 * * * * /root/autorestart.sh" >> /root/autorestart.sh
 sleep 3s
 
 printf "$(tput setaf 2)======================= Update fastcgi.conf =======================\n$(tput sgr0)"
