@@ -4,7 +4,7 @@ dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarc
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf -y update
 dnf -y module install php:remi-7.4
-dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar wget htop screen nano
+dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar wget htop screen nano iotop
 
 systemctl start php-fpm
 systemctl enable php-fpm
