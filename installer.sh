@@ -99,7 +99,7 @@ sleep 3s
 
 printf "$(tput setaf 2)======================= Update fastcgi.conf =======================\n$(tput sgr0)"
 rm -f /etc/nginx/fastcgi_params
-curl -o /etc/nginx/fastcgi.conf https://raw.githubusercontent.com/mozvid/webserver/master/fastcgi_params
+curl -o /etc/nginx/fastcgi_params https://raw.githubusercontent.com/mozvid/webserver/master/fastcgi_params
 sleep 3s
 
 printf "$(tput setaf 2)======================= Update www.conf =======================\n$(tput sgr0)"
