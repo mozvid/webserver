@@ -109,7 +109,8 @@ sleep 3s
 
 curl -o /var/www/html/info.php https://raw.githubusercontent.com/mozvid/webserver/master/info.php
 sleep 3s
-curl -o /var/www/html/db-manager.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php
+curl -o db-manager.php -OL  https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php
+sleep 3s
 
 printf "$(tput setaf 2)========================= install finished ========================= \n$(tput sgr0)"
 
