@@ -102,12 +102,14 @@ rm -f /etc/nginx/fastcgi_params
 curl -o /etc/nginx/fastcgi_params https://raw.githubusercontent.com/mozvid/webserver/master/fastcgi_params
 sleep 3s
 
-printf "$(tput setaf 2)======================= Update www.conf =======================\n$(tput sgr0)"
-rm -f /etc/php-fpm.d/www.conf
-curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/mozvid/webserver/master/www.conf
+# printf "$(tput setaf 2)======================= Update www.conf =======================\n$(tput sgr0)"
+# rm -f /etc/php-fpm.d/www.conf
+# curl -o /etc/php-fpm.d/www.conf https://raw.githubusercontent.com/mozvid/webserver/master/www.conf
+# sleep 3s
 
-sleep 3s
 curl -o /var/www/html/info.php https://raw.githubusercontent.com/mozvid/webserver/master/info.php
+sleep 3s
+curl -o /var/www/html/db-manager.php https://github.com/vrana/adminer/releases/download/v4.8.1/adminer-4.8.1-en.php
 
 printf "$(tput setaf 2)========================= install finished ========================= \n$(tput sgr0)"
 
