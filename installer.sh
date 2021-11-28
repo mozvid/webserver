@@ -1,8 +1,9 @@
 #!/bin/bash
 clear
 
-read -p "Enter your name : " name
-echo "Hi, $name. Let us be friends!" 
+printf "Enter your name : "
+read name
+printf "Hi, $name. Let us be friends!" 
 
 sleep 15s
 clear
