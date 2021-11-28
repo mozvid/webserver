@@ -1,5 +1,5 @@
 #!/bin/bash
-unset server
+read -p "Enter Your Machine Name : " server
 while [[ -z "${server}" ]]; do
     read -p "Enter Your Machine Name : " server
 done
