@@ -1,7 +1,8 @@
 #!/bin/bash
-printf "Enter Your Machine Name : \n"
-read machinename
-printf "mysqluser: $machinename"
+printf "MySQL User: (root) "
+read MYSQLUSER
+MYSQLUSER=${MYSQLUSER:-root}
+echo "mysqluser: $MYSQLUSER"
 hostnamectl set-hostname $machinename
 sleep 15s
 clear
