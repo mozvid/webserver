@@ -1,5 +1,5 @@
 #!/bin/bash
-printf "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)"
+printf "Enter Your Machine Name : \n"
 read machinename
 printf "mysqluser: $machinename"
 hostnamectl set-hostname $machinename
