@@ -3,6 +3,7 @@ clear
 
 echo "Enter Your Name: "
 read x
+sleep 5s
 printf "Welcome $x!"
 
 sleep 15s
