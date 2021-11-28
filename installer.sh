@@ -3,7 +3,7 @@ clear
 
 echo "Enter Your Name: "
 read x
-echo "Welcome ${x}!"
+echo "Welcome $x!"
 
 sleep 15s
 clear
