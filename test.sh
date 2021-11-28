@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "gass"
 while [ true ] ;
 do
 read -p "Enter Your Machine Name : " server
