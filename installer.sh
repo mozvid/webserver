@@ -1,4 +1,8 @@
 #!/bin/bash
+read -p "Enter a word: " word
+echo "You entered $word"
+
+sleep 15s
 read -p "Enter Your Machine Name : " machine_name
 hostnamectl set-hostname $machine_name
 sleep 5s
