@@ -1,8 +1,8 @@
 #!/bin/bash
 printf "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)"
-read machine_name
-printf "mysqluser: $machine_name"
-hostnamectl set-hostname $machine_name
+read machinename
+printf "mysqluser: $machinename"
+hostnamectl set-hostname $machinename
 sleep 15s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
