@@ -3,7 +3,6 @@ printf "MySQL User: (root) "
 read MYSQLUSER
 MYSQLUSER=${MYSQLUSER:-root}
 echo "mysqluser: $MYSQLUSER"
-hostnamectl set-hostname $machinename
 sleep 15s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
