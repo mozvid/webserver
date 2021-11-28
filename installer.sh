@@ -1,8 +1,7 @@
 #!/bin/bash
 clear
 
-echo "Enter Your Name: "
-read x
+read -p "Enter fullname: " x
 sleep 5s
 printf "Welcome $x!"
 
