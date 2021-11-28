@@ -1,9 +1,8 @@
 #!/bin/bash
-echo "kosong"
-
-while [-z "$server"];
-do
-read -p "Enter Your Machine Name : " server
+unset server
+while [ -z ${server} ]; do
+    read -p "Enter Your Machine Name : " server
 done
 
-echo "kosong"
+
+echo "servername = $server"
