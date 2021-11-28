@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 
-echo "Enter Your Name: "
+echo "Enter Your Names: "
 read x
 echo "Welcome $x!"
 
