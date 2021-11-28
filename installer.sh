@@ -1,4 +1,6 @@
 #!/bin/bash
+clear
+
 ENVIRONMENT_NAME=$1
 EMAIL=$2
 
@@ -7,6 +9,7 @@ read EMAIL
 
 echo "$ENVIRONMENT_NAME"
 echo "$EMAIL" 
+
 sleep 15s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
