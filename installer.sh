@@ -1,14 +1,8 @@
 #!/bin/bash
 clear
 
-ENVIRONMENT_NAME=$1
-EMAIL=$2
-
-read ENVIRONMENT_NAME
-read EMAIL
-
-echo "$ENVIRONMENT_NAME"
-echo "$EMAIL" 
+read -p "Enter your name : " name
+echo "Hi, $name. Let us be friends!" 
 
 sleep 15s
 clear
