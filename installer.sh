@@ -1,4 +1,7 @@
 #!/bin/bash
+read -p "Enter Your Machine Name : " machine_name
+hostnamectl set-hostname $machine_name
+clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 sleep 5s
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
