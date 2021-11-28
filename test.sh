@@ -8,6 +8,6 @@ then
 	printf "$server\n"
 break;
 fi
-do
+done
 
 echo "kosong"
