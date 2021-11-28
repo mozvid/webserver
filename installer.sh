@@ -1,16 +1,9 @@
 #!/bin/bash
-clear
-
-while [ true ] ;
-do
-read -p "Enter Your Machine Name : " server
-if [[ ! -z "${server}" ]];
-then
-	printf "$server\n"
-break;
-fi
+read -p "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)" server
+while [[ -z "${server}" ]]; do
+    read -p "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)" server
 done
-
+hostnamectl set-hostname $server
 sleep 5s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
