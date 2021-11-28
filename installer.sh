@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
 
-read -p "Enter fullname: " x
-sleep 5s
-printf "Welcome $x!"
+echo "Enter Your Machine Name : "
+read server
+printf "%s\n" "$server is running"
 
 sleep 15s
 clear
