@@ -1,7 +1,7 @@
 #!/bin/bash
-read -p "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)" server
+read -p "$(tput setaf 2)Enter Your Machine Name : $(tput sgr0)" server
 while [[ -z "${server}" ]]; do
-    read -p "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)" server
+    read -p "$(tput setaf 2)Enter Your Machine Name : $(tput sgr0)" server
 done
 hostnamectl set-hostname $server
 sleep 5s
