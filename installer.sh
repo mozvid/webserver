@@ -1,10 +1,12 @@
 #!/bin/bash
-if [ -z "$TEST_DIR" ]
-then
-    echo "TEST_DIR was not set, please enter the path: "
-    read input_variable
-    export TEST_DIR=$input_variable
-fi
+ENVIRONMENT_NAME=$1
+EMAIL=$2
+
+read ENVIRONMENT_NAME
+read EMAIL
+
+echo "$ENVIRONMENT_NAME"
+echo "$EMAIL" 
 sleep 15s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
