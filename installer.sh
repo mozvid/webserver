@@ -1,6 +1,7 @@
 #!/bin/bash
 read -p "Enter Your Machine Name : " machine_name
 hostnamectl set-hostname $machine_name
+sleep 5s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 sleep 5s
