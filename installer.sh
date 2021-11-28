@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
 
-echo "Enter Your Names: "
+echo "Enter Your Name: "
 read x
-echo "Welcome $x!"
+printf "Welcome $x!"
 
 sleep 15s
 clear
