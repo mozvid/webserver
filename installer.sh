@@ -1,11 +1,17 @@
 #!/bin/bash
 clear
 
-echo "Enter Your Machine Name : "
-read server
-printf "%s\n" "$server is running"
+while [ true ] ;
+do
+read -p "Enter Your Machine Name : " server
+if [ $server != 0  ];
+then
+	printf "$server\n"
+break;
+fi
+done
 
-sleep 15s
+sleep 5s
 clear
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 sleep 5s
