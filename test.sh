@@ -1,8 +1,13 @@
 #!/bin/csh
 echo "gass"
-input = ""
-while [[ $input = "" ]]; do
-   read input
-done
+while [ true ] ;
+do
+read -p "Enter Your Machine Name : " server
+if [[ ! -z "${server}" ]];
+then
+	printf "$server\n"
+break;
+fi
+do
 
 echo "kosong"
