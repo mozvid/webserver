@@ -1,4 +1,8 @@
 #!/bin/bash
+red=`tput setaf 1`
+green=`tput setaf 2`
+reset=`tput sgr0`
+echo "${red}red text ${green}green text${reset}"
 printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 sleep 5s
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
