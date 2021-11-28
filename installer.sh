@@ -4,7 +4,7 @@ clear
 while [ true ] ;
 do
 read -p "Enter Your Machine Name : " server
-if [ $server != 0  ];
+if [ -z "$server" ];
 then
 	printf "$server\n"
 break;
