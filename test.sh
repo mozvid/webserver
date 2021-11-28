@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/csh
 echo "gass"
 input = ""
 while [[ $input = "" ]]; do
