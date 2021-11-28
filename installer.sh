@@ -1,9 +1,7 @@
 #!/bin/bash
-read -p "Enter a word: " word
-echo "You entered $word"
-
-sleep 15s
-read -p "Enter Your Machine Name : " machine_name
+printf "$(tput setaf 2)Enter Your Machine Name : \n$(tput sgr0)"
+read machine_name
+echo "mysqluser: $machine_name"
 hostnamectl set-hostname $machine_name
 sleep 5s
 clear
