@@ -1,13 +1,8 @@
 #!/bin/bash
 echo "gass"
-while [ true ] ;
-do
-read -p "Enter Your Machine Name : " server
-if [[ ! -z "${server}" ]];
-then
-	printf "$server\n"
-break;
-fi
+input = ""
+while [[ $input = "" ]]; do
+   read input
 done
 
 echo "kosong"
