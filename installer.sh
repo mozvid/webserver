@@ -1,5 +1,6 @@
 #!/bin/bash
-printf "$(tput setaf 2)======================= install php 7.4 =======================\n$(tput sgr0)"
+printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
+sleep 5s
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-8.rpm
 dnf -y update
