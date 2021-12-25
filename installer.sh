@@ -104,11 +104,11 @@ rm -f /etc/nginx/default.d/php.conf
 curl -o /etc/nginx/default.d/php.conf https://raw.githubusercontent.com/mozvid/webserver/master/php.conf
 sleep 3s
 
-printf "$(tput setaf 2)======================= Update mysql-server.cnf =======================\n$(tput sgr0)"
-sleep 3s
-rm -f /etc/my.cnf.d/mysql-server.cnf
-curl -o /etc/my.cnf.d/mysql-server.cnf https://raw.githubusercontent.com/mozvid/webserver/master/mysql-server.cnf
-sleep 3s
+#printf "$(tput setaf 2)======================= Update mysql-server.cnf =======================\n$(tput sgr0)"
+#sleep 3s
+#rm -f /etc/my.cnf.d/mysql-server.cnf
+#curl -o /etc/my.cnf.d/mysql-server.cnf https://raw.githubusercontent.com/mozvid/webserver/master/mysql-server.cnf
+#sleep 3s
 
 printf "$(tput setaf 2)======================= Update crontabs =======================\n$(tput sgr0)"
 sleep 3s
