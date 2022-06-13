@@ -6,7 +6,7 @@ done
 hostnamectl set-hostname $server
 sleep 3s
 clear
-printf "$(tput setaf 2)========================= install php 8.1 ========================= \n$(tput sgr0)"
+printf "$(tput setaf 2)========================= install php 7.4 ========================= \n$(tput sgr0)"
 sleep 3s
 dnf -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm
 dnf -y install https://rpms.remirepo.net/enterprise/remi-release-9.rpm
@@ -14,7 +14,7 @@ dnf -y install http://mirror.stream.centos.org/9-stream/CRB/x86_64/os/Packages/l
 dnf -y --enablerepo=crb install libmemcached-awesome-tools
 dnf -y update
 
-dnf -y module install php:remi-8.1
+dnf -y module install php:remi-7.4
 dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-bcmath php-json tar zip wget htop screen nano iotop
 
 systemctl start php-fpm
