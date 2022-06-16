@@ -90,6 +90,7 @@ chown -R nginx:nginx /var/lib/php
 chmod -R 777 /var/www/html
 setsebool -P httpd_can_network_connect 1
 setsebool -P httpd_unified 1
+setsebool -P httpd_setrlimit 1
 sleep 3s
 
 printf "$(tput setaf 2)======================= Update nginx.conf =======================\n$(tput sgr0)"
