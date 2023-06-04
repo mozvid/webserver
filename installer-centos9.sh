@@ -101,6 +101,12 @@ rm -f /etc/nginx/nginx.conf
 curl -o /etc/nginx/nginx.conf https://raw.githubusercontent.com/mozvid/webserver/master/nginx.conf
 sleep 3s
 
+printf "$(tput setaf 2)======================= Update redis.conf =======================\n$(tput sgr0)"
+sleep 3s
+rm -f /var/lib/redis/redis.conf
+curl -o /var/lib/redis/redis.conf https://raw.githubusercontent.com/mozvid/webserver/master/redis.conf
+sleep 3s
+
 printf "$(tput setaf 2)======================= Update php.conf =======================\n$(tput sgr0)"
 sleep 3s
 rm -f /etc/nginx/default.d/php.conf
