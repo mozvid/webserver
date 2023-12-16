@@ -90,6 +90,7 @@ printf "$(tput setaf 2)======================= finishing install ===============
 sleep 3s
 chown -R nginx:nginx /var/www/html
 chown -R nginx:nginx /var/lib/php
+chmod -R 777 /var/lib/php/session
 chmod -R 777 /var/www/html
 setsebool -P httpd_can_network_connect 1
 setsebool -P httpd_unified 1
