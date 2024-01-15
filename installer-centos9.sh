@@ -15,7 +15,7 @@ dnf -y --enablerepo=crb install libmemcached-awesome-tools
 dnf -y update
 
 dnf -y module install php:remi-7.4
-dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-redis php-bcmath php-json tar zip wget htop screen nano iotop
+dnf -y install php-fpm php-cli php-mysqlnd php-pecl-memcached php-tidy php-common php-zip php-gd php-mbstring php-curl php-xml php-pear php-redis php-bcmath php-json tar zip wget htop screen nano iotop
 
 systemctl start php-fpm
 systemctl enable php-fpm
